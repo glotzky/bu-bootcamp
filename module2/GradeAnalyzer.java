@@ -1,5 +1,7 @@
 import java.io.*; 
 import java.util.ArrayList;
+import java.util.Collections;
+
 public class GradeAnalyzer {
  
     public static void main(String[] args) {
@@ -134,6 +136,21 @@ public class GradeAnalyzer {
     return grade_bands;
     }
 
+    public static double getMedian(ArrayList<Integer> scores){
+        if (scores.isEmpty()){
+            return 0.0;
+        }
+        else{
+            Collections.sort(scores);
+            int middleNumber = scores.size()/2;
+            if (scores.size()%2==1){
+                return scores.get(middleNumber);
+            } 
+            else {
+                return (scores.get(middleNumber-1)+scores.get(middleNumber))/2;
+            }
+        }
+    }
         // Writes and prints the report
     /*=== Grade Analysis Report ===
 Total scores processed:  13
