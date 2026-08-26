@@ -14,6 +14,10 @@ public class Contact {
         return phone;
     }
 
+    public void updatePhoneNumber(String newPhoneNumber){
+        phone = newPhoneNumber;
+    }
+    
     // TOSTRING: what prints when you System.out.println(employee) 
     @Override 
     public String toString() { 
