@@ -35,4 +35,16 @@ public class GradeAnalyzerTest {
         ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(88, 88, 88)); 
         assertEquals(88.0, GradeAnalyzer.calculateAverage(scores)); 
     }
+
+    @Test
+    void calculateMedian_returnZero_whenListEmpty(){
+        ArrayList<Integer> scores = new ArrayList<>(Arrays.asList()); 
+        assertEquals(0.0, GradeAnalyzer.getMedian(scores));
+    }
+
+    @Test
+    void calculateMedian_returnThirdNumber_whenListHasFiveNumbers(){
+        ArrayList<Integer> scores = new ArrayList<>(Arrays.asList(100,90,20,30,40)); 
+        assertEquals(40.0, GradeAnalyzer.getMedian(scores));
+    }
 }
